@@ -4,7 +4,9 @@ This is the slightly enhanced version of borax12's material-datetime range picke
 [ ![Download](https://api.bintray.com/packages/borax12/maven/material-datetime-rangepicker/images/download.svg) ](https://bintray.com/borax12/maven/material-datetime-rangepicker/_latestVersion)
 
 Changes:
+
 1) possibility to set "from" and "to" dates separately when initalizing DatePickerDialog. It is useful when you want to allow to easily change the previously set dates.
+
 2) you can set your own tab names instead of the default "FROM" and "TO", eg. in other languages:
 ```java
 DatePickerDialog dpd;
@@ -34,11 +36,6 @@ dependencies {
 }
 
 ```
-
-
-##Update
--Added Time Range Picker
-
 
 ##Date Selection
 
