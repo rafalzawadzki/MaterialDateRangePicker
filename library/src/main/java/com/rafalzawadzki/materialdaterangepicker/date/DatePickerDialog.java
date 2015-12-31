@@ -199,18 +199,39 @@ public class DatePickerDialog extends DialogFragment implements
             int monthOfYear, 
             int dayOfMonth) {
         DatePickerDialog ret = new DatePickerDialog();
-        ret.initialize(callBack, year, monthOfYear, dayOfMonth);
+        ret.initialize(callBack, year, monthOfYear, dayOfMonth, year, monthOfYear, dayOfMonth);
         return ret;
     }
 
-    public void initialize(OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth) {
+    /**
+     * Overloaded initalizer which allows to set the end date.
+     * @param callBack How the parent is notified that the date is set.
+     * @param year The initial year of the dialog.
+     * @param monthOfYear The initial month of the dialog.
+     * @param dayOfMonth The initial day of the dialog.
+     * @param year_end The end year of the dialog.
+     * @param monthOfYear_end The end month of the dialog.
+     * @param dayOfMonth_end The end day of the dialog.
+     */
+    public static DatePickerDialog newInstance(OnDateSetListener callBack, int year,
+                                               int monthOfYear,
+                                               int dayOfMonth,
+                                               int year_end,
+                                               int monthOfYear_end,
+                                               int dayOfMonth_end) {
+        DatePickerDialog ret = new DatePickerDialog();
+        ret.initialize(callBack, year, monthOfYear, dayOfMonth, year_end, monthOfYear_end, dayOfMonth_end);
+        return ret;
+    }
+
+    public void initialize(OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth, int year_end, int monthOfYear_end, int dayOfMonth_end) {
         mCallBack = callBack;
         mCalendar.set(Calendar.YEAR, year);
         mCalendar.set(Calendar.MONTH, monthOfYear);
         mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        mCalendarEnd.set(Calendar.YEAR, year);
-        mCalendarEnd.set(Calendar.MONTH, monthOfYear);
-        mCalendarEnd.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        mCalendarEnd.set(Calendar.YEAR, year_end);
+        mCalendarEnd.set(Calendar.MONTH, monthOfYear_end);
+        mCalendarEnd.set(Calendar.DAY_OF_MONTH, dayOfMonth_end);
 
         mThemeDark = false;
         mAccentColor = -1;

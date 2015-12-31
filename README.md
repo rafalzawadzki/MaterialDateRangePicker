@@ -24,7 +24,7 @@ repositories {
 
 
 dependencies {
-  compile 'com.github.rafalzawadzki:MaterialDateRangePicker:1.31'
+  compile 'com.github.rafalzawadzki:MaterialDateRangePicker:1.32'
 }
 
 ```
@@ -129,7 +129,3 @@ tpd.show(getFragmentManager(), "Timepickerdialog");
 ```
 
 For other documentation regarding theming , handling orientation changes , and callbacks - check out the original documentation - https://github.com/wdullaer/MaterialDateTimePicker
-
-TODO
-----
-1. More device config handling
