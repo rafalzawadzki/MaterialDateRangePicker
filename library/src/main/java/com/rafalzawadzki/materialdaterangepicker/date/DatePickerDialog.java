@@ -918,4 +918,12 @@ public class DatePickerDialog extends DialogFragment implements
     public void tryVibrate() {
         if(mVibrate) mHapticFeedbackController.tryVibrate();
     }
+
+    public void setTabNames(String fromTab, String toTab){
+        TextView tv1 = (TextView)tabHost.getTabWidget().getChildTabViewAt(0).findViewById(android.R.id.title);
+        TextView tv2 = (TextView)tabHost.getTabWidget().getChildTabViewAt(1).findViewById(android.R.id.title);
+
+        tv1.setText(fromTab);
+        tv2.setText(toTab);
+    }
 }

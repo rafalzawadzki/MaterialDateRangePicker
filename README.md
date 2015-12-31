@@ -1,10 +1,16 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialDateRangePicker-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2501)
 
-This is the exact version of borax12's material-datetime range picker that can be found here:
+This is the slightly enhanced version of borax12's material-datetime range picker that can be found here:
 [ ![Download](https://api.bintray.com/packages/borax12/maven/material-datetime-rangepicker/images/download.svg) ](https://bintray.com/borax12/maven/material-datetime-rangepicker/_latestVersion)
-All I have changed is possibility to set "from" and "to" dates separately when initalizing DatePickerDialog.
-It is useful when you want to allow to easily change the previously set dates.
 
+Changes:
+1) possibility to set "from" and "to" dates separately when initalizing DatePickerDialog. It is useful when you want to allow to easily change the previously set dates.
+2) you can set your own tab names instead of the default "FROM" and "TO", eg. in other languages:
+```java
+DatePickerDialog dpd;
+...
+dpd.setTabNames("From date", "To date");
+```
 
 Material Date and Time Picker with Range Selection
 ======================================================
@@ -24,7 +30,7 @@ repositories {
 
 
 dependencies {
-  compile 'com.github.rafalzawadzki:MaterialDateRangePicker:1.32'
+  compile 'com.github.rafalzawadzki:MaterialDateRangePicker:1.33'
 }
 
 ```
