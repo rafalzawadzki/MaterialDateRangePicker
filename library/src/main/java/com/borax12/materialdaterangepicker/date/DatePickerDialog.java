@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.borax12.materialdaterangepicker.date;
+package com.rafalzawadzki.materialdaterangepicker.date;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -38,10 +38,10 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-import com.borax12.materialdaterangepicker.HapticFeedbackController;
-import com.borax12.materialdaterangepicker.R;
-import com.borax12.materialdaterangepicker.TypefaceHelper;
-import com.borax12.materialdaterangepicker.Utils;
+import com.rafalzawadzki.materialdaterangepicker.HapticFeedbackController;
+import com.rafalzawadzki.materialdaterangepicker.R;
+import com.rafalzawadzki.materialdaterangepicker.TypefaceHelper;
+import com.rafalzawadzki.materialdaterangepicker.Utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -55,7 +55,7 @@ import java.util.Locale;
  * Dialog allowing users to select a date.
  */
 public class DatePickerDialog extends DialogFragment implements
-        OnClickListener, com.borax12.materialdaterangepicker.date.DatePickerController {
+        OnClickListener, com.rafalzawadzki.materialdaterangepicker.date.DatePickerController {
 
     private static final String TAG = "DatePickerDialog";
 
@@ -110,15 +110,15 @@ public class DatePickerDialog extends DialogFragment implements
     private DialogInterface.OnCancelListener mOnCancelListener;
     private DialogInterface.OnDismissListener mOnDismissListener;
 
-    private com.borax12.materialdaterangepicker.date.AccessibleDateAnimator mAnimator;
+    private com.rafalzawadzki.materialdaterangepicker.date.AccessibleDateAnimator mAnimator;
 
     private TextView mDayOfWeekView;
     private LinearLayout mMonthAndDayView;
     private TextView mSelectedMonthTextView;
     private TextView mSelectedDayTextView;
     private TextView mYearView;
-    private com.borax12.materialdaterangepicker.date.DayPickerView mDayPickerView;
-    private com.borax12.materialdaterangepicker.date.YearPickerView mYearPickerView;
+    private com.rafalzawadzki.materialdaterangepicker.date.DayPickerView mDayPickerView;
+    private com.rafalzawadzki.materialdaterangepicker.date.YearPickerView mYearPickerView;
 
     private int mCurrentView = UNINITIALIZED;
     private int mCurrentViewEnd = UNINITIALIZED;
@@ -156,9 +156,9 @@ public class DatePickerDialog extends DialogFragment implements
     private TextView mSelectedMonthTextViewEnd;
     private TextView mSelectedDayTextViewEnd;
     private TextView mYearViewEnd;
-    private com.borax12.materialdaterangepicker.date.SimpleDayPickerView mDayPickerViewEnd;
-    private com.borax12.materialdaterangepicker.date.YearPickerView mYearPickerViewEnd;
-    private com.borax12.materialdaterangepicker.date.AccessibleDateAnimator mAnimatorEnd;
+    private com.rafalzawadzki.materialdaterangepicker.date.SimpleDayPickerView mDayPickerViewEnd;
+    private com.rafalzawadzki.materialdaterangepicker.date.YearPickerView mYearPickerViewEnd;
+    private com.rafalzawadzki.materialdaterangepicker.date.AccessibleDateAnimator mAnimatorEnd;
     private int tabTag=1;
 
     /**
@@ -351,10 +351,10 @@ public class DatePickerDialog extends DialogFragment implements
             mDismissOnPause = savedInstanceState.getBoolean(KEY_DISMISS);
         }
 
-        mDayPickerView = new com.borax12.materialdaterangepicker.date.SimpleDayPickerView(activity, this);
-        mYearPickerView = new com.borax12.materialdaterangepicker.date.YearPickerView(activity, this);
-        mDayPickerViewEnd = new com.borax12.materialdaterangepicker.date.SimpleDayPickerView(activity, this);
-        mYearPickerViewEnd = new com.borax12.materialdaterangepicker.date.YearPickerView(activity, this);
+        mDayPickerView = new com.rafalzawadzki.materialdaterangepicker.date.SimpleDayPickerView(activity, this);
+        mYearPickerView = new com.rafalzawadzki.materialdaterangepicker.date.YearPickerView(activity, this);
+        mDayPickerViewEnd = new com.rafalzawadzki.materialdaterangepicker.date.SimpleDayPickerView(activity, this);
+        mYearPickerViewEnd = new com.rafalzawadzki.materialdaterangepicker.date.YearPickerView(activity, this);
 
 
         Resources res = getResources();
@@ -366,8 +366,8 @@ public class DatePickerDialog extends DialogFragment implements
         int bgColorResource = mThemeDark ? R.color.mdtp_date_picker_view_animator_dark_theme : R.color.mdtp_date_picker_view_animator;
         view.setBackgroundColor(activity.getResources().getColor(bgColorResource));
 
-        mAnimator = (com.borax12.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.animator);
-        mAnimatorEnd = (com.borax12.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.animator_end);
+        mAnimator = (com.rafalzawadzki.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.animator);
+        mAnimatorEnd = (com.rafalzawadzki.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.animator_end);
 
         mAnimator.addView(mDayPickerView);
         mAnimator.addView(mYearPickerView);
@@ -463,13 +463,13 @@ public class DatePickerDialog extends DialogFragment implements
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
-                com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay calendarDay;
+                com.rafalzawadzki.materialdaterangepicker.date.MonthAdapter.CalendarDay calendarDay;
                 if(tabId=="start"){
-                    calendarDay = new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar.getTimeInMillis());
+                    calendarDay = new com.rafalzawadzki.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar.getTimeInMillis());
                     mDayPickerView.goTo(calendarDay,true,true,false);
                 }
                 else{
-                    calendarDay = new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendarEnd.getTimeInMillis());
+                    calendarDay = new com.rafalzawadzki.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendarEnd.getTimeInMillis());
                     mDayPickerViewEnd.goTo(calendarDay,true,true,false);
 
                 }
@@ -860,8 +860,8 @@ public class DatePickerDialog extends DialogFragment implements
 
 
     @Override
-    public com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay getSelectedDay() {
-        return new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar);
+    public com.rafalzawadzki.materialdaterangepicker.date.MonthAdapter.CalendarDay getSelectedDay() {
+        return new com.rafalzawadzki.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar);
     }
 
     @Override

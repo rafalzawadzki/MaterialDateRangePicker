@@ -1,6 +1,11 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialDateRangePicker-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2501)
 
-[ ![Download](https://api.bintray.com/packages/borax12/maven/material-datetime-rangepicker/images/download.svg) ](https://bintray.com/borax12/maven/material-datetime-rangepicker/_latestVersion)
+This is the exact version of borax12's material-datetime range picker that can be found here:
+[ ![Download](https://api.bintray.com/packages/borax12/maven/material-datetime-rangepicker/images/download.svg) ](https://bintray.com/borax12/maven/material-datetime-rangepicker/_latestVersion)		 [ ![Download](https://api.bintray.com/packages/borax12/maven/material-datetime-rangepicker/images/download.svg) ](https://bintray.com/borax12/maven/material-datetime-rangepicker/_latestVersion)
+
+All I have changed is possibility to set "from" and "to" dates separately when initalizing DatePickerDialog.
+It is useful when you want to allow to easily change the previously set dates.
+
 
 Material Date and Time Picker with Range Selection
 ======================================================
@@ -15,11 +20,12 @@ Add the jcenter repository information in your build.gradle file like this
 
 repositories {
   jcenter()
+  maven { url "https://jitpack.io" }
 }
 
 
 dependencies {
-  compile 'com.borax12.materialdaterangepicker:library:1.2'
+  compile 'com.github.rafalzawadzki:MaterialDateRangePicker:1.31'
 }
 
 ```
@@ -91,6 +97,24 @@ DatePickerDialog dpd = DatePickerDialog.newInstance(
 );
 dpd.show(getFragmentManager(), "Datepickerdialog");
 ```
+
+or:
+
+```java
+Calendar from = Calendar.getInstance();
+Calendar to = Calendar.getInstance();
+DatePickerDialog dpd = DatePickerDialog.newInstance(
+  MainActivity.this,
+  from.get(Calendar.YEAR),
+  from.get(Calendar.MONTH),
+  from.get(Calendar.DAY_OF_MONTH),
+  to.get(Calendar.YEAR),
+  to.get(Calendar.MONTH),
+  to.get(Calendar.DAY_OF_MONTH)
+);
+dpd.show(getFragmentManager(), "Datepickerdialog");
+```
+
 
 ### Create a TimePickerDialog` using the supplied factory
 You will need to create a new instance of `TimePickerDialog` using the static `newInstance()` method, supplying proper default values and a callback. Once the dialogs are configured, you can call `show()`.

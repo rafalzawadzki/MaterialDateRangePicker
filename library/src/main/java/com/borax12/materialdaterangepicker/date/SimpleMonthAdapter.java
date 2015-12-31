@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package com.borax12.materialdaterangepicker.date;
+package com.rafalzawadzki.materialdaterangepicker.date;
 
 import android.content.Context;
 
 /**
  * An adapter for a list of {@link SimpleMonthView} items.
  */
-public class SimpleMonthAdapter extends com.borax12.materialdaterangepicker.date.MonthAdapter {
+public class SimpleMonthAdapter extends com.rafalzawadzki.materialdaterangepicker.date.MonthAdapter {
 
     public SimpleMonthAdapter(Context context, DatePickerController controller) {
         super(context, controller);
     }
 
     @Override
-    public com.borax12.materialdaterangepicker.date.MonthView createMonthView(Context context) {
-        final com.borax12.materialdaterangepicker.date.MonthView monthView = new com.borax12.materialdaterangepicker.date.SimpleMonthView(context, null, mController);
+    public com.rafalzawadzki.materialdaterangepicker.date.MonthView createMonthView(Context context) {
+        final com.rafalzawadzki.materialdaterangepicker.date.MonthView monthView = new com.rafalzawadzki.materialdaterangepicker.date.SimpleMonthView(context, null, mController);
         return monthView;
     }
 }
