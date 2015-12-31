@@ -97,6 +97,9 @@ public class DatePickerDialog extends DialogFragment implements
     private static final int DEFAULT_START_YEAR = 1900;
     private static final int DEFAULT_END_YEAR = 2100;
 
+    private String TAB_FROM_NAME = "FROM";
+    private String TAB_TO_NAME = "TO";
+
     private static final int ANIMATION_DURATION = 300;
     private static final int ANIMATION_DELAY = 500;
 
@@ -315,11 +318,11 @@ public class DatePickerDialog extends DialogFragment implements
 
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
         startDatePage.setContent(R.id.start_date_group);
-        startDatePage.setIndicator(activity.getResources().getString(R.string.mdtp_from));
+        startDatePage.setIndicator(TAB_FROM_NAME);
 
         TabHost.TabSpec endDatePage = tabHost.newTabSpec("end");
         endDatePage.setContent(R.id.end_date_group);
-        endDatePage.setIndicator(activity.getResources().getString(R.string.mdtp_to));
+        endDatePage.setIndicator(TAB_TO_NAME);
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
@@ -920,10 +923,7 @@ public class DatePickerDialog extends DialogFragment implements
     }
 
     public void setTabNames(String fromTab, String toTab){
-        TextView tv1 = (TextView)tabHost.getTabWidget().getChildTabViewAt(0).findViewById(android.R.id.title);
-        TextView tv2 = (TextView)tabHost.getTabWidget().getChildTabViewAt(1).findViewById(android.R.id.title);
-
-        tv1.setText(fromTab);
-        tv2.setText(toTab);
+        TAB_FROM_NAME = fromTab;
+        TAB_TO_NAME = toTab;
     }
 }
