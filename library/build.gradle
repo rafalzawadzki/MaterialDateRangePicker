@@ -15,7 +15,7 @@ ext {
     siteUrl = 'https://github.com/rafalzawadzki/MaterialDateRangePicker'
     gitUrl = 'https://github.com/rafalzawadzki/MaterialDateRangePicker.git'
 
-    libraryVersion = '1.33'
+    libraryVersion = '1.34'
 
     developerId = 'rafalzawadzki'
     developerName = 'Rafal Zawadzki'
